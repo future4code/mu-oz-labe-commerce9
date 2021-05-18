@@ -14,7 +14,7 @@ export default class Carrinho extends React.Component {
                     <div className="headerCarrinho">Carrinho Vazio</div>
                 ):(
                     <div className="headerCarrinho">
-                        Você tem {itensCarrinho.length} in the cart {""}
+                        Você tem {itensCarrinho.length} no carrinho {""}
                     </div>
                 )}
             </div>

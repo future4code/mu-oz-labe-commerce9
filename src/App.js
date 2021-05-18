@@ -1,6 +1,7 @@
 import React from 'react'
 import Filtro from './components/filtro'
 import Produtos from './components/produtos'
+import Carrinho from './components/carrinho'
 
 
 
@@ -14,22 +15,22 @@ export default class App extends React.Component {
       valor:"",
       nome:"",
       ordem:"",
-      intensCarrinho:[],
+      itensCarrinho:[],
     }
 
     adiciorAoCarrinho = (produto) => {
-      const itensCarrinho = this.state.intensCarrinho.slice()
+      const itensCarrinho = this.state.itensCarrinho.slice()
       let itemNoCarrinho = false
       itensCarrinho.forEach((item)=> {
-        if (item.id === product.id) {
+        if (item.id === produto.id) {
         item.count++
         itemNoCarrinho = true
         }
       })
       if (!itemNoCarrinho) {
-        intensCarrinho.push({...produto, count:1 });
+        itensCarrinho.push({...produto, count: 1 });
       }
-      this.setState({intensCarrinho})
+      this.setState({itensCarrinho})
     };
 
     filtrarProducts = (event) => {
@@ -80,7 +81,7 @@ export default class App extends React.Component {
             <Produtos produtos={this.state.products} adiciorAoCarrinho={this.adiciorAoCarrinho}></Produtos>
           </div>
           <div classname="sidebar">
-            <Carrihno intensCarrinho={this.state.itensCarrinho}></Carrihno>
+            <Carrinho itensCarrinho={this.state.itensCarrinho}></Carrinho>
           </div>
         </div>
       </main>
