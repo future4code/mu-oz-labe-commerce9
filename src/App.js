@@ -19,18 +19,21 @@ export default class App extends React.Component {
     }
 
     adiciorAoCarrinho = (produto) => {
+      
       const itensCarrinho = this.state.itensCarrinho.slice()
       let itemNoCarrinho = false
       itensCarrinho.forEach((item)=> {
         if (item.id === produto.id) {
         item.count++
         itemNoCarrinho = true
+        
         }
       })
       if (!itemNoCarrinho) {
         itensCarrinho.push({...produto, count: 1 });
       }
       this.setState({itensCarrinho})
+      
     };
 
     filtrarProducts = (event) => {

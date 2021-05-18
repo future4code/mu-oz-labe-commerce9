@@ -4,6 +4,7 @@ import formatoMoeda from './formatarMoeda'
 export default class Produtos extends React.Component  {
 
     render () {
+        
 
         return (
             <aside className="produtos">
