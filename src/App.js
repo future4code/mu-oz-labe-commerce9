@@ -1,7 +1,7 @@
 import React from 'react'
-import Filtro from './components/filtro'
-import Produtos from './components/produtos'
-import Carrinho from './components/carrinho'
+import Filtro from './components/Filtros/filtro'
+import Produtos from './components/Lista_Produtos/produtos'
+import Carrinho from './components/Carrinho_Compras/carrinho'
 
 
 
@@ -16,6 +16,13 @@ export default class App extends React.Component {
       nome:"",
       ordem:"",
       itensCarrinho:[],
+    }
+
+    removerDoCarrinho = (produto) => {
+      const itensCarrinho = this.state.itensCarrinho.slice()
+      this.setState({
+        itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)
+      })
     }
 
     adiciorAoCarrinho = (produto) => {
@@ -75,13 +82,16 @@ export default class App extends React.Component {
       <main>
         <div classname ="content">
           <div classname="main">
-            <Filtro count ={this.state.products.length} 
+            <Filtro contador ={this.state.products.length} 
             tamanho={this.state.tamanho} 
             ordem={this.state.ordem} 
-            filtroProducts={this.filtrarProducts} 
-            ordemProducts={this.ordenarProducts}>
+            filtroProducts={this.filtrarProducts}  
+            ordemProducts={this.ordenarProducts} >  
             </Filtro>
-            <Produtos produtos={this.state.products} adiciorAoCarrinho={this.adiciorAoCarrinho}></Produtos>
+            <Produtos produtos={this.state.products} 
+            adiciorAoCarrinho={this.adiciorAoCarrinho} 
+            removerDoCarrinho={this.removerDoCarrinho}>
+            </Produtos>
           </div>
           <div classname="sidebar">
             <Carrinho itensCarrinho={this.state.itensCarrinho}></Carrinho>

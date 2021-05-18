@@ -5,11 +5,11 @@ export default class Filtro extends React.Component {
     render () {
         return (
             <div className="Filtro"> 
-                <div className = "resultadoFiltro">{this.props.count} Produtos</div>
+                <div className = "resultadoFiltro">{this.props.contador} Produtos</div>
                 <div className = "tipoFiltro">
-                    Order
+                    Ordem
                     <select value ={this.props.ordem} onChange={this.props.ordemProducts}>
-                        <option>Latest</option>
+                        <option>Ultimo</option>
                         <option value="Menor">Menor</option>
                         <option value="Maior">Maior</option>
                     </select>

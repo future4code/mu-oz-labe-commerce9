@@ -1,5 +1,6 @@
 import React from 'react'
-import formatoMoeda from './formatarMoeda'
+import formatoMoeda from '../formatarMoeda'
+
 
 export default class Produtos extends React.Component  {
 
@@ -8,9 +9,9 @@ export default class Produtos extends React.Component  {
 
         return (
             <aside className="produtos">
-                <ul>
-                    {this.props.produtos.map(produto => (
-                        <li key={produto.id}>
+                <ul> 
+                    {this.props.produtos.map(produto => (  // => map aqui foi utilizado para renderizar o objeto do state products, pelo id de cada item e criar uma lista. 
+                        <li key={produto.id}>             
                             <div className="produto">
                                 <a href={"#" + produto.id}>
                                     <img src={produto.img} alt={produto.nome}></img>
