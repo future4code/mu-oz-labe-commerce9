@@ -20,9 +20,7 @@ export default class App extends React.Component {
 
     removerDoCarrinho = (produto) => {
       const itensCarrinho = this.state.itensCarrinho.slice()
-      this.setState({
-        itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)
-      })
+      this.setState({itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)})    
     }
 
     adiciorAoCarrinho = (produto) => {

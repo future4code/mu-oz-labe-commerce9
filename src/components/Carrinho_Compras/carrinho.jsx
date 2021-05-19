@@ -31,7 +31,7 @@ export default class Carrinho extends React.Component {
                                     <div>{item.nome}</div>
                                     {formatoMoeda(item.valor)} x {item.count} {" "}
                                     <div>
-                                         <button onClick={() => this.props.removerDoCarrinho}>Remover</button>
+                                         <button onClick={() => this.props.removerDoCarrinho(item)}>Remover</button>
                                     </div>
                                     
                                 </div>
