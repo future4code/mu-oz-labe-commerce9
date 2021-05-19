@@ -2,7 +2,14 @@ import React from 'react'
 import Filtro from './components/Filtros/filtro'
 import Produtos from './components/Lista_Produtos/produtos'
 import Carrinho from './components/Carrinho_Compras/carrinho'
+import styled from 'styled-components'
 
+const AppContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding: 16px;
+  gap: 8px;
+`
 
 
 export default class App extends React.Component {
@@ -73,36 +80,29 @@ export default class App extends React.Component {
   
   render () {
 
-  return (
-
-    <div className ="grid-container">
-      <header>
-
-      </header>
-      <main>
-        <div classname ="content">
-          <div classname="main">
+  return ( <AppContainer>
             <Filtro contador ={this.state.products.length} 
             tamanho={this.state.tamanho} 
             ordem={this.state.ordem} 
             filtroProducts={this.filtrarProducts}  
             ordemProducts={this.ordenarProducts} >  
             </Filtro>
+
             <Produtos produtos={this.state.products} 
             adiciorAoCarrinho={this.adiciorAoCarrinho} 
             removerDoCarrinho={this.removerDoCarrinho}>
             </Produtos>
-          </div>
-          <div classname="sidebar">
+          
             <Carrinho itensCarrinho={this.state.itensCarrinho}></Carrinho>
-          </div>
-        </div>
-      </main>
-      <button>Adicionar ao Carrinho</button>
-    </div>
-    
-    );
+         </AppContainer>
+     );
   }
 
+
+    
+      
+
+      
+     
 }
 
