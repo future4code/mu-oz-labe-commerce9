@@ -1,7 +1,12 @@
 import React from 'react';
 import formatoMoeda from '../formatarMoeda'
+import styled from 'styled-components'
 // import {removerDoCarrinho} from './
 
+const CarrinhoContainer = styled.div`
+  border: 1px solid black;
+  padding: 8px;
+`
 
 
 export default class Carrinho extends React.Component {
@@ -11,7 +16,7 @@ export default class Carrinho extends React.Component {
         const {itensCarrinho} = this.props;
 
         return (
-            <div>
+            <CarrinhoContainer>
                 {itensCarrinho.length === 0 ? (
                     <div className="headerCarrinho">Carrinho Vazio</div>
                 ):(
@@ -40,7 +45,7 @@ export default class Carrinho extends React.Component {
                     </ul>
                 </div>
             </div>
-            </div>
+            </CarrinhoContainer>
            
         )
     }
