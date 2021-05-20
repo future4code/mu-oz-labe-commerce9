@@ -78,8 +78,8 @@ export default class App extends React.Component {
 
       </header>
       <main>
-        <div classname ="content">
-          <div classname="main">
+        <div className ="content">
+          <div className="main">
             <Filtro contador ={this.state.products.length} 
             tamanho={this.state.tamanho} 
             ordem={this.state.ordem} 
@@ -88,11 +88,13 @@ export default class App extends React.Component {
             </Filtro>
             <Produtos produtos={this.state.products} 
             adiciorAoCarrinho={this.adiciorAoCarrinho} 
-            removerDoCarrinho={this.removerDoCarrinho}>
+            >
             </Produtos>
           </div>
-          <div classname="sidebar">
-            <Carrinho itensCarrinho={this.state.itensCarrinho}></Carrinho>
+          <div className="sidebar">
+            <Carrinho itensCarrinho={this.state.itensCarrinho}
+            removerDoCarrinho={this.removerDoCarrinho}
+            ></Carrinho>
           </div>
         </div>
       </main>

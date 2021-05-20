@@ -39,6 +39,18 @@ export default class Carrinho extends React.Component {
                         ))}
                     </ul>
                 </div>
+                {itensCarrinho.length !==0 && (
+                    <div className="cart">
+                        <div className="total">
+                            <div>
+                            Total: {" "}
+                            {formatoMoeda(
+                                itensCarrinho.reduce((a, c) => a + c.valor * c.count, 0)
+                            )}
+                            </div>
+                            <button className="button primary">Prosseguir</button>
+                        </div>
+                    </div> )}
             </div>
             </div>
            
