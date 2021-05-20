@@ -48,7 +48,7 @@ export default class Carrinho extends React.Component {
                                 itensCarrinho.reduce((a, c) => a + c.valor * c.count, 0)
                             )}
                             </div>
-                            <button className="button primary">Prosseguir</button>
+                            <button className="button primary">Finalizar Compras</button>
                         </div>
                     </div> )}
             </div>
