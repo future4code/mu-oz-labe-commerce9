@@ -36,7 +36,7 @@ export default class Carrinho extends React.Component {
                                     <div>{item.nome}</div>
                                     {formatoMoeda(item.valor)} x {item.count} {" "}
                                     <div>
-                                         <button onClick={() => this.props.removerDoCarrinho}>Remover</button>
+                                         <button onClick={() => this.props.removerDoCarrinho(item)}>Remover</button>
                                     </div>
                                     
                                 </div>
@@ -44,7 +44,19 @@ export default class Carrinho extends React.Component {
                         ))}
                     </ul>
                 </div>
-            </div>
+                    {itensCarrinho.length !==0 && (
+                    <div className="cart">
+                             <div className="total">
+                                <div>
+                                Total: {" "}
+                                {formatoMoeda(
+                                    itensCarrinho.reduce((a, c) => a + c.valor * c.count, 0)
+                                )}
+                                </div>
+                                <button className="button primary">Finalizar Compras</button>
+                            </div>
+                    </div> )}
+                </div>
             </CarrinhoContainer>
            
         )
