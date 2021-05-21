@@ -89,11 +89,12 @@ export default class App extends React.Component {
             </Filtro>
 
             <Produtos produtos={this.state.products} 
-            adiciorAoCarrinho={this.adiciorAoCarrinho} 
-            removerDoCarrinho={this.removerDoCarrinho}>
+            adiciorAoCarrinho={this.adiciorAoCarrinho}>
             </Produtos>
-          
-            <Carrinho itensCarrinho={this.state.itensCarrinho}></Carrinho>
+            
+            <Carrinho itensCarrinho={this.state.itensCarrinho}
+             removerDoCarrinho={this.removerDoCarrinho}>
+            </Carrinho>
          </AppContainer>
      );
   }
