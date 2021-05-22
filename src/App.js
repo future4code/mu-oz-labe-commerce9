@@ -23,9 +23,6 @@ export default class App extends React.Component {
       nome:"",
       ordem:"",
       itensCarrinho:[],
-      valorMin: 0,
-      valorMax: 1000,
-      valorNome: "prod"
     }
 
     // removerDoCarrinho = (produto) => {

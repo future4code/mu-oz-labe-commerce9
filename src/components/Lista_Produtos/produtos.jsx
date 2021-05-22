@@ -10,6 +10,24 @@ const CardInfo = styled.div`
   padding: 16px;
   gap: 16px;
   border: 1px solid black;
+  background-color:blueviolet;
+`
+const CardContainer = styled.div`
+display: flex;
+overflow-wrap:anywhere;
+padding:16px;
+gap:16px;
+border: 1px solid black;
+`
+
+const ButtonAdd = styled.button`
+
+border-radius:16px;
+width: 150px;
+border: 2px solid black;
+
+
+
 `
 
 
@@ -20,8 +38,8 @@ export default class Produtos extends React.Component  {
         
 
         return (
-            <div>
-                <div> 
+            <CardContainer>
+                
                     {this.props.produtos.map(produto => (  // => map aqui foi utilizado para renderizar o objeto do state products, pelo id de cada item e criar uma lista. 
                         <CardInfo key={produto.id}>             
                             <div>
@@ -35,15 +53,15 @@ export default class Produtos extends React.Component  {
                                 <div>
                                     {formatoMoeda(produto.valor)}
                                 </div>
-                                <button onClick={()=>this.props.adiciorAoCarrinho(produto)} className="botaoPrimario">
+                                <ButtonAdd onClick={()=>this.props.adiciorAoCarrinho(produto)} className="botaoPrimario">
                                     Adicionar ao Carrinho
-                                </button>
+                                </ButtonAdd>
                                 </div>
                             </div>
                         </CardInfo>
                     ))}                  
-                </div>  
-            </div>
+                 
+            </CardContainer>
         )
     }
 }
