@@ -25,12 +25,24 @@ export default class App extends React.Component {
       itensCarrinho:[],
     }
 
+    // removerDoCarrinho = (produto) => {
+    //   const itensCarrinho = this.state.itensCarrinho.slice()
+    //   this.setState({
+    //     itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)
+    //   })
+    // }
+
+
     removerDoCarrinho = (produto) => {
-      const itensCarrinho = this.state.itensCarrinho.slice()
-      this.setState({
-        itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)
-      })
-    }
+      const itensCarrinho = this.state.itensCarrinho
+      const existe = itensCarrinho.find((x) => x.id === produto.id)
+      if(existe.count === 1) {
+        this.setState({itensCarrinho: this.state.itensCarrinho.filter((x) => x.id !== produto.id)})
+      } else {
+        this.setState({itensCarrinho:this.state.itensCarrinho.map((x) => x.id === produto.id ? { ...existe, count: existe.count -1}: x)})
+      }
+   }
+
 
     adiciorAoCarrinho = (produto) => {
       
@@ -49,6 +61,7 @@ export default class App extends React.Component {
       this.setState({itensCarrinho})
       
     };
+
 
     filtrarProducts = (event) => {
 
