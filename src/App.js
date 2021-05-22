@@ -23,6 +23,7 @@ export default class App extends React.Component {
       nome:"",
       ordem:"",
       itensCarrinho:[],
+
     }
 
     // removerDoCarrinho = (produto) => {
