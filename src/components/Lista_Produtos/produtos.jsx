@@ -5,9 +5,10 @@ import styled from 'styled-components'
 
 const CardInfo = styled.div`
   display: grid;
-  grid-column: 1fr;
+  grid-template-columns:repeat(3, 1fr);
+  width:300px;
   padding: 16px;
-  gap: 8px;
+  gap: 16px;
   border: 1px solid black;
 `
 
@@ -20,10 +21,10 @@ export default class Produtos extends React.Component  {
 
         return (
             <div>
-                <ul> 
+                <div> 
                     {this.props.produtos.map(produto => (  // => map aqui foi utilizado para renderizar o objeto do state products, pelo id de cada item e criar uma lista. 
-                        <li key={produto.id}>             
-                            <CardInfo>
+                        <CardInfo key={produto.id}>             
+                            <div>
                                 <a href={"#" + produto.id}>
                                     <img src={produto.img} alt={produto.nome}></img>
                                     <p>
@@ -38,10 +39,10 @@ export default class Produtos extends React.Component  {
                                     Adicionar ao Carrinho
                                 </button>
                                 </div>
-                            </CardInfo>
-                        </li>
+                            </div>
+                        </CardInfo>
                     ))}                  
-                </ul>
+                </div>  
             </div>
         )
     }
