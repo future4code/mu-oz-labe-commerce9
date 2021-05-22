@@ -23,6 +23,9 @@ export default class App extends React.Component {
       nome:"",
       ordem:"",
       itensCarrinho:[],
+      valorMin: 0,
+      valorMax: 1000,
+      valorNome: "prod"
     }
 
     // removerDoCarrinho = (produto) => {
@@ -62,10 +65,20 @@ export default class App extends React.Component {
       
     };
 
-
-    filtrarProducts = (event) => {
-
+    onChangeValorMin = (event) => {
+      this.setState ({valorMin: event.targe.value})
     }
+
+    onChangeValorMax = (event) => {
+      this.setState({valorMax: event.target.value})
+    }
+
+    onChangeValorNome = (event) => {
+      this.setState({valorNome: event.target.value})
+    }
+
+
+    
 
     ordenarProducts = (event) =>  {
       const ordem = event.target.value
@@ -98,7 +111,11 @@ export default class App extends React.Component {
             tamanho={this.state.tamanho} 
             ordem={this.state.ordem} 
             filtroProducts={this.filtrarProducts}  
-            ordemProducts={this.ordenarProducts} >  
+            ordemProducts={this.ordenarProducts}   
+            onChangeValorMin= {this.onChangeValorMin}
+            onChangeValorMax= {this.onChangeValorMax}
+            onChangeValorNome= {this.onChangeValorNome}>
+
             </Filtro>
 
             <Produtos produtos={this.state.products} 
