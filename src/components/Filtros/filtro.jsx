@@ -45,8 +45,8 @@ export default class Filtro extends React.Component {
                     Valor Mínimo:
                     <input
                     type="value"
-                    value={this.props.valor}
-                    onChange={this.props.filterMin}
+                    value={this.props.size}
+                    onChange={this.props.filterProduct}
                     
                      />
                 </div> */}

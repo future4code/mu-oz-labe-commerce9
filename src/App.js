@@ -42,6 +42,8 @@ export default class App extends React.Component {
       }       
     }
 
+   
+
    filterMin = (event) =>{
 
     this.setState({valor:event.target.value, 
