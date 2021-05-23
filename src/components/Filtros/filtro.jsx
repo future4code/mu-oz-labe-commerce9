@@ -49,7 +49,7 @@ export default class Filtro extends React.Component {
                     <input
                     type= "number"
                     value={this.props.valorMin}
-                    onChange={() =>this.props.onChangeValorMin(item)}
+                    onChange={this.props.onChangeValorMin}
                     />
                 </InputContainer>
 
@@ -58,7 +58,7 @@ export default class Filtro extends React.Component {
                    <input
                     type= "number"
                     value={this.props.valorMax}
-                    onChange={() =>this.props.onChangeValorMax(item)}
+                    onChange={this.props.onChangeValorMax}
                    />
                 </InputContainer>
 
@@ -67,7 +67,7 @@ export default class Filtro extends React.Component {
                   <input
                     type= "text"
                     value={this.props.valorNome}
-                    onChange={() =>this.props.onChangeValorNome(item)}
+                    onChange={this.props.onChangeValorNome}
                   />
                 </InputContainer>
                 

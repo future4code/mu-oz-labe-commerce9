@@ -15,14 +15,17 @@ const AppContainer = styled.div`
 export default class App extends React.Component {
 
   state ={ products: [
-    { id:1, valor:10, nome:"Foguete da Missão Apollo 11", img:"", tamanho:"G",ordem:""},
-    { id:2, valor:50, nome:"Aerolito da vila do Chaves", img:"", tamanho:"P",ordem:""}
+    { id:1, value:10, nome:"Foguete da Missão Apollo 11", img:"", tamanho:"G",ordem:""},
+    { id:2, value:50, nome:"Aerolito da vila do Chaves", img:"", tamanho:"P",ordem:""}
       ],
       tamanho:"",
       valor:"",
       nome:"",
       ordem:"",
       itensCarrinho:[],
+      valorMin: 10,
+      valorMax: 1000,
+      valorNome: "produto"
     }
 
     // removerDoCarrinho = (produto) => {
@@ -63,7 +66,7 @@ export default class App extends React.Component {
     };
 
     onChangeValorMin = (event) => {
-      this.setState ({valorMin: event.targe.value})
+      this.setState ({valorMin: event.target.value})
     }
 
     onChangeValorMax = (event) => {
@@ -108,7 +111,10 @@ export default class App extends React.Component {
             tamanho={this.state.tamanho} 
             ordem={this.state.ordem} 
             filtroProducts={this.filtrarProducts}  
-            ordemProducts={this.ordenarProducts}   
+            ordemProducts={this.ordenarProducts}  
+            valorMin= {this.setState.valorMin}
+            valorMax= {this.setState.valorMax}
+            valorNome={this.setState.valorNome} 
             onChangeValorMin= {this.onChangeValorMin}
             onChangeValorMax= {this.onChangeValorMax}
             onChangeValorNome= {this.onChangeValorNome}>
@@ -116,7 +122,10 @@ export default class App extends React.Component {
             </Filtro>
 
             <Produtos produtos={this.state.products} 
-            adiciorAoCarrinho={this.adiciorAoCarrinho}>
+            adiciorAoCarrinho={this.adiciorAoCarrinho}
+            valorMin= {this.setState.valorMin}
+            valorMax= {this.setState.valorMax}
+            valorNome={this.setState.valorNome}> 
             </Produtos>
             
             <Carrinho itensCarrinho={this.state.itensCarrinho}
