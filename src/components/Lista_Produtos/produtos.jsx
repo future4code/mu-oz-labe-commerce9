@@ -32,7 +32,7 @@ const ButtonAdd = styled.button`
 export default class Produtos extends React.Component {
 
     getFiltroProducts = () => {
-        return this.props.products 
+        return this.props.produtos
           .filter((product)=> this.props.valorMin ? product.value > this.props.valorMin: true)
           .filter((product)=> this.props.valorMax ? product.value < this.props.valorMax: true)
           .filter((product)=> this.props.valorNome ? product.nome.includes(this.props.valorNome) : true)
@@ -47,8 +47,7 @@ export default class Produtos extends React.Component {
             <CardContainer>
 
 
-                {listaFiltrada.map(produto => (  // => map aqui foi utilizado para renderizar o objeto do state products, pelo id de cada item e criar uma lista. 
-
+                {listaFiltrada.map(produto => ( 
                     <CardInfo key={produto.id}>
                        
                         <div>

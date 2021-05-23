@@ -11,16 +11,24 @@ const AppContainer = styled.div`
   gap: 8px;
 `
 
+const products = [
+  
+  { id:1,
+    value:10,
+    nome:"Produto 1",
+    img:"https://picsum.photos/200",
+    tamanho:"G",
+    ordem:""},
+  { id:2, value:20, nome:"Produto 2", img:"https://picsum.photos/201", tamanho:"P",ordem:""},
+  { id:3, value:30, nome:"Produto 3", img:"https://picsum.photos/202", tamanho:"P",ordem:""},
+  { id:4, value:40, nome:"Produto 4", img:"https://picsum.photos/203", tamanho:"P",ordem:""},
+]
+
 
 export default class App extends React.Component {
 
-  state ={ products: [
-    { id:1, value:10, nome:"Produto 1", img:"https://picsum.photos/200", tamanho:"G",ordem:""},
-    { id:2, value:20, nome:"Produto 2", img:"https://picsum.photos/201", tamanho:"P",ordem:""},
-    { id:3, value:30, nome:"Produto 3", img:"https://picsum.photos/202", tamanho:"P",ordem:""},
-    { id:4, value:40, nome:"Produto 4", img:"https://picsum.photos/203", tamanho:"P",ordem:""},
-    
-      ],
+  state ={ 
+      products:products,
       tamanho:"",
       valor:"",
       nome:"",
@@ -110,9 +118,7 @@ export default class App extends React.Component {
 
   return ( <AppContainer>
             <Filtro contador ={this.state.products.length} 
-            tamanho={this.state.tamanho} 
-            ordem={this.state.ordem} 
-            filtroProducts={this.filtrarProducts}  
+            ordem={this.state.ordem}  
             ordemProducts={this.ordenarProducts}
             valorMin={this.state.valorMin}
             valorMax={this.state.valorMax}
@@ -127,6 +133,8 @@ export default class App extends React.Component {
 
             <Produtos produtos={this.state.products} 
             adiciorAoCarrinho={this.adiciorAoCarrinho}
+            valorMin={this.state.valorMin}
+            valorMax={this.state.valorMax}
             
             >
             
