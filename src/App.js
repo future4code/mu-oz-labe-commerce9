@@ -15,8 +15,11 @@ const AppContainer = styled.div`
 export default class App extends React.Component {
 
   state ={ products: [
-    { id:1, value:10, nome:"Foguete da Missão Apollo 11", img:"", tamanho:"G",ordem:""},
-    { id:2, value:50, nome:"Aerolito da vila do Chaves", img:"", tamanho:"P",ordem:""}
+    { id:1, value:10, nome:"Produto 1", img:"https://picsum.photos/200", tamanho:"G",ordem:""},
+    { id:2, value:20, nome:"Produto 2", img:"https://picsum.photos/201", tamanho:"P",ordem:""},
+    { id:3, value:30, nome:"Produto 3", img:"https://picsum.photos/202", tamanho:"P",ordem:""},
+    { id:4, value:40, nome:"Produto 4", img:"https://picsum.photos/203", tamanho:"P",ordem:""},
+    
       ],
       tamanho:"",
       valor:"",
@@ -64,19 +67,8 @@ export default class App extends React.Component {
       this.setState({itensCarrinho})
       
     };
-
-    onChangeValorMin = (event) => {
-      this.setState ({valorMin: event.target.value})
-    }
-
-    onChangeValorMax = (event) => {
-      this.setState({valorMax: event.target.value})
-    }
-
-    onChangeValorNome = (event) => {
-      this.setState({valorNome: event.target.value})
-    }
-
+    
+    
 
     
 
@@ -111,21 +103,14 @@ export default class App extends React.Component {
             tamanho={this.state.tamanho} 
             ordem={this.state.ordem} 
             filtroProducts={this.filtrarProducts}  
-            ordemProducts={this.ordenarProducts}  
-            valorMin= {this.setState.valorMin}
-            valorMax= {this.setState.valorMax}
-            valorNome={this.setState.valorNome} 
-            onChangeValorMin= {this.onChangeValorMin}
-            onChangeValorMax= {this.onChangeValorMax}
-            onChangeValorNome= {this.onChangeValorNome}>
-
+            ordemProducts={this.ordenarProducts}>  
             </Filtro>
 
+            
+
             <Produtos produtos={this.state.products} 
-            adiciorAoCarrinho={this.adiciorAoCarrinho}
-            valorMin= {this.setState.valorMin}
-            valorMax= {this.setState.valorMax}
-            valorNome={this.setState.valorNome}> 
+            adiciorAoCarrinho={this.adiciorAoCarrinho}>
+            
             </Produtos>
             
             <Carrinho itensCarrinho={this.state.itensCarrinho}

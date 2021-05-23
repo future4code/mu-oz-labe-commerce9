@@ -16,13 +16,17 @@ const InputContainer = styled.label`
 
 
 
+
+
 export default class Filtro extends React.Component {
 
     render () {
         return (
             <FiltroContainer> 
-                <div className = "resultadoFiltro">{this.props.contador} Produtos</div>
-                <div className = "tipoFiltro">
+                  <div>
+                      {this.props.contador} Produtos
+                  </div>
+                
                     <InputContainer>
                     Ordem
                     <select value ={this.props.ordem} onChange={this.props.ordemProducts}>
@@ -31,7 +35,7 @@ export default class Filtro extends React.Component {
                         <option value="Maior">Maior</option>
                     </select>
                     </InputContainer>
-                </div>
+                
         
                 <InputContainer>
                     Filtro
@@ -48,8 +52,7 @@ export default class Filtro extends React.Component {
                     Valor mínimo:
                     <input
                     type= "number"
-                    value={this.props.valorMin}
-                    onChange={this.props.onChangeValorMin}
+                    
                     />
                 </InputContainer>
 
@@ -57,8 +60,7 @@ export default class Filtro extends React.Component {
                    Valor máximo:
                    <input
                     type= "number"
-                    value={this.props.valorMax}
-                    onChange={this.props.onChangeValorMax}
+                    
                    />
                 </InputContainer>
 
@@ -66,8 +68,7 @@ export default class Filtro extends React.Component {
                   Busca por nome:
                   <input
                     type= "text"
-                    value={this.props.valorNome}
-                    onChange={this.props.onChangeValorNome}
+                    
                   />
                 </InputContainer>
                 
