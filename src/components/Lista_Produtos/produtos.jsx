@@ -51,7 +51,7 @@ export default class Produtos extends React.Component  {
                                 </a>
                                 <div>
                                 <div>
-                                    {formatoMoeda(produto.valor)}
+                                    {formatoMoeda(produto.value)}
                                 </div>
                                 <ButtonAdd onClick={()=>this.props.adiciorAoCarrinho(produto)} className="botaoPrimario">
                                     Adicionar ao Carrinho
