@@ -18,7 +18,7 @@ export default class Filtro extends React.Component {
     render () {
         return (
             <FiltroContainer> 
-                <div className = "resultadoFiltro">{this.props.contador} Produtos</div>
+                <div className = "resultadoFiltro">{this.props.count} Produtos</div>
                 <div className = "tipoFiltro">
                     <InputContainer>
                     Ordem
@@ -30,17 +30,29 @@ export default class Filtro extends React.Component {
                     </InputContainer>
                 </div>
         
-                <InputContainer>
-                    Filtro
-                    <select value = {this.props.tamanho} onChange={this.props.filtroProducts}>
-                        <option value="">Todos</option>
+            <InputContainer>
+                    Filtro { " " }
+                    <select value = {this.props.size} onChange={this.props.filterProduct}>
+                        <option value=" ">Todos</option>
                         <option value="P">P</option>
                         <option value="M">M</option>
                         <option value="G">G</option>
                         <option value="GG">GG</option>
                     </select>
-                </InputContainer>
                 
+
+                {/* <div>
+                    Valor Mínimo:
+                    <input
+                    type="value"
+                    value={this.props.valor}
+                    onChange={this.props.filterMin}
+                    
+                     />
+                </div> */}
+            </InputContainer> 
+
+
             </FiltroContainer>
         )
     }

@@ -1,0 +1,15 @@
+      { "products":[ 
+    { "id":1, 
+      "price":10, 
+      "nome":"Foguete da Missão Apollo 11", 
+      "img":"", 
+      "availableSizes":["P", "G", "GG"," "]
+    },
+    { "id":2, 
+      "price":50, 
+      "nome":"Aerolito da vila do Chaves", 
+      "img":"",
+      "availableSizes":["P", "M", "G"," " ]
+    }
+      ]}
+  

@@ -39,7 +39,7 @@ export default class Produtos extends React.Component  {
 
         return (
             <CardContainer>
-                
+                <ul>
                     {this.props.produtos.map(produto => (  // => map aqui foi utilizado para renderizar o objeto do state products, pelo id de cada item e criar uma lista. 
                         <CardInfo key={produto.id}>             
                             <div>
@@ -51,7 +51,7 @@ export default class Produtos extends React.Component  {
                                 </a>
                                 <div>
                                 <div>
-                                    {formatoMoeda(produto.valor)}
+                                    {formatoMoeda(produto.price)}
                                 </div>
                                 <ButtonAdd onClick={()=>this.props.adiciorAoCarrinho(produto)} className="botaoPrimario">
                                     Adicionar ao Carrinho
@@ -60,7 +60,7 @@ export default class Produtos extends React.Component  {
                             </div>
                         </CardInfo>
                     ))}                  
-                 
+                 </ul>
             </CardContainer>
         )
     }
