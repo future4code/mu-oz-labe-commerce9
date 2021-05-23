@@ -19,6 +19,7 @@ const InputContainer = styled.label`
 
 
 export default class Filtro extends React.Component {
+    
 
     render () {
         return (
@@ -52,6 +53,8 @@ export default class Filtro extends React.Component {
                     Valor mínimo:
                     <input
                     type= "number"
+                    value={this.props.valorMin}
+                    onChange={this.props.onChangeValorMin}
                     
                     />
                 </InputContainer>
@@ -60,7 +63,8 @@ export default class Filtro extends React.Component {
                    Valor máximo:
                    <input
                     type= "number"
-                    
+                    value={this.props.valorMax}
+                    onChange={this.props.onChangeValorMax}
                    />
                 </InputContainer>
 
@@ -68,7 +72,8 @@ export default class Filtro extends React.Component {
                   Busca por nome:
                   <input
                     type= "text"
-                    
+                    value= {this.props.valorNome}
+                    onChange={this.props.onchangeValorNome}
                   />
                 </InputContainer>
                 
