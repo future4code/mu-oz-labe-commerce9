@@ -68,7 +68,7 @@ export default class Carrinho extends React.Component {
                                 <div>
                                 Total: {" "}
                                 {formatoMoeda(
-                                    itensCarrinho.reduce((a, c) => a + c.valor * c.count, 0)
+                                    itensCarrinho.reduce((a, c) => a + c.value * c.count, 0)
                                 )}
                                 </div>
                                 <input className="BtmFinalizar" alt="Finalizar Compras" type="image" src={BtmFinalizar} />  
