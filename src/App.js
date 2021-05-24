@@ -72,13 +72,6 @@ export default class App extends React.Component {
       abreCarrinho: false,
     }
 
-    // removerDoCarrinho = (produto) => {
-    //   const itensCarrinho = this.state.itensCarrinho.slice()
-    //   this.setState({
-    //     itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)
-    //   })
-    // }
-
     mostraCarrinho = () => {
       return this.setState({ abreCarrinho: !this.state.abreCarrinho})
     }
@@ -191,22 +184,19 @@ export default class App extends React.Component {
             onChangeValorNome={this.onChangeValorNome}
             >  
             </Filtro>
-
-            
-
             <Produtos produtos={this.state.products} 
             adiciorAoCarrinho={this.adiciorAoCarrinho}
             valorMin={this.state.valorMin}
             valorMax={this.state.valorMax}
+            valorNome={this.state.valorNome}
             >
-            </Produtos>
-            
+            </Produtos>         
             <Carrinho 
              mostrar={this.state.abreCarrinho}
              itensCarrinho={this.state.itensCarrinho}
              removerDoCarrinho={this.removerDoCarrinho}>
             </Carrinho>
-         </AppContainer>
+   </AppContainer>
          </div>
      );
      
