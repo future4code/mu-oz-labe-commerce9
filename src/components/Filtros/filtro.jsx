@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FiltroContainer = styled.div`
-  border: 1px solid black;
+  border: 1px solid #42A1CD;
   padding: 8px;
 `
 const InputContainer = styled.label`
@@ -12,11 +12,6 @@ const InputContainer = styled.label`
   margin-bottom: 8px;
 
 `
-
-
-
-
-
 
 export default class Filtro extends React.Component {
     
@@ -73,12 +68,11 @@ export default class Filtro extends React.Component {
                   <input
                     type= "text"
                     value= {this.props.valorNome}
-                    onChange={this.props.onchangeValorNome}
+                    onChange={this.props.onChangeValorNome}
                   />
                 </InputContainer>
                 
             </FiltroContainer>
         )
     }
-
 }

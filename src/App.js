@@ -1,14 +1,42 @@
-import React from 'react'
-import Filtro from './components/Filtros/filtro'
-import Produtos from './components/Lista_Produtos/produtos'
-import Carrinho from './components/Carrinho_Compras/carrinho'
-import styled from 'styled-components'
+import React from 'react';
+import Filtro from './components/Filtros/filtro';
+import Produtos from './components/Lista_Produtos/produtos';
+import Carrinho from './components/Carrinho_Compras/carrinho';
+import styled from 'styled-components';
+import Logo from './img/Logo.svg'
+import Cart from './img/Cart.svg';
+
 
 const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  padding: 16px;
-  gap: 8px;
+  display: flex;
+`
+
+const Header = styled.header`
+position: sticky;
+top: 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 100px;
+background-color: #42A1CD;
+padding: 0 2rem;
+z-index: 1;
+`
+const ContCarrinho = styled.div`
+  display: row;
+  justify-content: center;
+  align-items:center;
+
+  .QtdItens{
+  color: #CDD6CF;
+  font-size: 20px;
+}
+`
+
+const LogoCart =  styled.img`
+  width: 60px;
+  cursor: pointer;
+  
 `
 
 const products = [
@@ -19,9 +47,13 @@ const products = [
     img:"https://picsum.photos/200",
     tamanho:"G",
     ordem:""},
-  { id:2, value:20, nome:"Produto 2", img:"https://picsum.photos/201", tamanho:"P",ordem:""},
-  { id:3, value:30, nome:"Produto 3", img:"https://picsum.photos/202", tamanho:"P",ordem:""},
-  { id:4, value:40, nome:"Produto 4", img:"https://picsum.photos/203", tamanho:"P",ordem:""},
+  { id:2, value:20, nome:"Camiseta Starter ", img:"https://picsum.photos/201", tamanho:"P",ordem:""},
+  { id:3, value:30, nome:"Camiseta Especial Recorte", img:"https://picsum.photos/202", tamanho:"P",ordem:""},
+  { id:4, value:40, nome:"Camiseta Starter Recorte", img:"https://picsum.photos/203", tamanho:"P",ordem:""},
+  { id:5, value:40, nome:"Camiseta", img:"https://picsum.photos/205", tamanho:"P",ordem:""},
+  { id:6, value:40, nome:"CamisetaRecorte", img:"https://picsum.photos/206", tamanho:"P",ordem:""},
+  { id:7, value:40, nome:"Starter Recorte", img:"https://picsum.photos/207", tamanho:"P",ordem:""},
+  { id:8, value:40, nome:"Camiseta", img:"https://picsum.photos/208", tamanho:"P",ordem:""},
 ]
 
 
@@ -36,7 +68,8 @@ export default class App extends React.Component {
       itensCarrinho:[],
       valorMin: 10,
       valorMax: 1000,
-      valorNome: ""
+      valorNome: "",
+      abreCarrinho: false,
     }
 
     // removerDoCarrinho = (produto) => {
@@ -45,6 +78,10 @@ export default class App extends React.Component {
     //     itensCarrinho: itensCarrinho.filter((x) => x.id !== produto.id)
     //   })
     // }
+
+    mostraCarrinho = () => {
+      return this.setState({ abreCarrinho: !this.state.abreCarrinho})
+    }
 
 
     removerDoCarrinho = (produto) => {
@@ -116,7 +153,33 @@ export default class App extends React.Component {
   
   render () {
 
-  return ( <AppContainer>
+  return ( 
+
+<div>
+
+       
+<Header>
+          <div>
+            <img src={Logo} alt="Logo"/>
+          </div>
+          
+          <div>
+           <ContCarrinho>
+            <span className="QtdItens"> Meu carrinho </span>
+            <span className="QtdItens">{this.state.itensCarrinho.length} </span>
+           </ContCarrinho>
+            <LogoCart 
+            src={Cart} 
+            alt="Carrinho"
+            onClick={this.mostraCarrinho} 
+            mostrar={this.state.abreCarrinho}
+            title={'Acesse seu carrinho'}
+            />
+          </div>
+        </Header>
+  
+  
+  <AppContainer>
             <Filtro contador ={this.state.products.length} 
             ordem={this.state.ordem}  
             ordemProducts={this.ordenarProducts}
@@ -135,23 +198,19 @@ export default class App extends React.Component {
             adiciorAoCarrinho={this.adiciorAoCarrinho}
             valorMin={this.state.valorMin}
             valorMax={this.state.valorMax}
-            
             >
-            
             </Produtos>
             
-            <Carrinho itensCarrinho={this.state.itensCarrinho}
+            <Carrinho 
+             mostrar={this.state.abreCarrinho}
+             itensCarrinho={this.state.itensCarrinho}
              removerDoCarrinho={this.removerDoCarrinho}>
             </Carrinho>
          </AppContainer>
+         </div>
      );
-  }
-
-
-    
-      
-
-      
      
+  }   
 }
+
 

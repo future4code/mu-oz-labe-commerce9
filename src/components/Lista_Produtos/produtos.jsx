@@ -1,30 +1,49 @@
 import React from 'react'
 import formatoMoeda from '../formatarMoeda'
 import styled from 'styled-components'
+import Btm from '../../img/Btm.svg'
 
 
 const CardInfo = styled.div`
-  display: grid;
-  grid-template-columns:repeat(3, 1fr);
-  width:300px;
-  padding: 16px;
-  gap: 16px;
-  border: 1px solid black;
-  background-color:blueviolet;
+  max-width:250px;
+  border: 1px solid #42A1CD;
+  background-color:#fff;
+  box-shadow: 0px 0px 10px 0px #42A1CD;
+  border-radius: 10px;
+  text-align: center;
+  padding:10px;
+
+  a:link 
+{ 
+ text-decoration:none;
+ color: #000000;
+}
 `
 const CardContainer = styled.div`
   display: flex;
-  overflow-wrap:anywhere;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
   padding:16px;
-  gap:16px;
-  
+   
   /* border: 1px solid black; */
 `
+const AreaProduto = styled.div`
 
-const ButtonAdd = styled.button`
-  border-radius:16px;
-  width: 150px;
-  border: 2px solid black;
+input{
+    width: 200px; 
+}
+
+.fortMoeda{
+    font-size:20px;
+    color: #51AB4B;
+}
+
+p{
+    text-decoration: none;
+    
+}
+
 `
 
 
@@ -50,7 +69,7 @@ export default class Produtos extends React.Component {
                 {listaFiltrada.map(produto => ( 
                     <CardInfo key={produto.id}>
                        
-                        <div>
+                        <AreaProduto>
                             <a href={"#" + produto.id}>
                                 <img src={produto.img} alt={produto.nome}></img>
                                 <p>
@@ -58,14 +77,12 @@ export default class Produtos extends React.Component {
                                 </p>
                             </a>
                             <div>
-                                <div>
+                                <div className="fortMoeda">
                                     {formatoMoeda(produto.value)}
                                 </div>
-                                <ButtonAdd onClick={() => this.props.adiciorAoCarrinho(produto)} className="botaoPrimario">
-                                    Adicionar ao Carrinho
-                                </ButtonAdd>
+                                <input onClick={() => this.props.adiciorAoCarrinho(produto)} alt="teste" type="image" src={Btm} />
                             </div>
-                        </div>
+                        </AreaProduto>
                     </CardInfo>
                 ))}
 

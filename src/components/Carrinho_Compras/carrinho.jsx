@@ -1,11 +1,24 @@
 import React from 'react';
 import formatoMoeda from '../formatarMoeda'
 import styled from 'styled-components'
+
+import BtmFinalizar from '../../img/BtmFinalizar.svg'
+import BtmRemover from '../../img/ImgRemover.svg'
+
+
+
 // import {removerDoCarrinho} from './
 
 const CarrinhoContainer = styled.div`
-  border: 1px solid black;
+  border: 1px solid #42A1CD;
   padding: 8px;
+
+  .BtmFinalizar{
+    width: 260px; 
+  }
+  .BtmRemover{
+    width: 25px; 
+  }
 `
 
 
@@ -29,14 +42,19 @@ export default class Carrinho extends React.Component {
                     <ul>
                         {itensCarrinho.map(item => (
                             <li key={item.id}>
-                                <div>
-                                    <img src={item.img} alt={item.nome}></img>
-                                </div>
+                                
                                 <div>
                                     <div>{item.nome}</div>
                                     {formatoMoeda(item.value)} x {item.count} {" "}
                                     <div>
-                                         <button onClick={() => this.props.removerDoCarrinho(item)}>Remover</button>
+                                         <input 
+                                         onClick={() => this.props.removerDoCarrinho(item)} 
+                                         className="BtmRemover" 
+                                         alt="Remover" 
+                                         type="image" 
+                                         src={BtmRemover} 
+                                         title="Remover" 
+                                         />  
                                     </div>
                                     
                                 </div>
@@ -53,7 +71,7 @@ export default class Carrinho extends React.Component {
                                     itensCarrinho.reduce((a, c) => a + c.valor * c.count, 0)
                                 )}
                                 </div>
-                                <button className="button primary">Finalizar Compras</button>
+                                <input className="BtmFinalizar" alt="Finalizar Compras" type="image" src={BtmFinalizar} />  
                             </div>
                     </div> )}
                 </div>
