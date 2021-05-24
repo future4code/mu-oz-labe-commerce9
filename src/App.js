@@ -42,18 +42,14 @@ const LogoCart =  styled.img`
 const products = [
   
   { id:1,
-    value:10,
-    nome:"Produto 1",
-    img:"https://picsum.photos/200",
-    tamanho:"G",
-    ordem:""},
-  { id:2, value:20, nome:"Camiseta Starter ", img:"https://picsum.photos/201", tamanho:"P",ordem:""},
-  { id:3, value:30, nome:"Camiseta Especial Recorte", img:"https://picsum.photos/202", tamanho:"P",ordem:""},
-  { id:4, value:40, nome:"Camiseta Starter Recorte", img:"https://picsum.photos/203", tamanho:"P",ordem:""},
-  { id:5, value:40, nome:"Camiseta", img:"https://picsum.photos/205", tamanho:"P",ordem:""},
-  { id:6, value:40, nome:"CamisetaRecorte", img:"https://picsum.photos/206", tamanho:"P",ordem:""},
-  { id:7, value:40, nome:"Starter Recorte", img:"https://picsum.photos/207", tamanho:"P",ordem:""},
-  { id:8, value:40, nome:"Camiseta", img:"https://picsum.photos/208", tamanho:"P",ordem:""},
+    value:10,nome:"Camiseta",img:"https://bit.ly/2RJHnoR",tamanho:"G",ordem:""},
+  { id:2, value:70, nome:"Camiseta Starter ", img:"https://bit.ly/3faxB8i", tamanho:"P",ordem:""},
+  { id:3, value:80, nome:"Camiseta Especial Recorte", img:"https://bit.ly/3vg2hdW", tamanho:"P",ordem:""},
+  { id:4, value:60, nome:"Camiseta Starter Recorte", img:"https://bit.ly/3fH8fOd", tamanho:"P",ordem:""},
+  { id:5, value:40, nome:"Camiseta", img:"https://bit.ly/3vb3aV0", tamanho:"P",ordem:""},
+  { id:6, value:4000, nome:"Roupa de Astronauta", img:"https://bit.ly/3fdTtzH", tamanho:"P",ordem:""},
+  { id:7, value:80, nome:"Camisa Bebê Astronauta", img:"https://bit.ly/3wwviC6", tamanho:"P",ordem:""},
+  { id:8, value:90, nome:"Pijama Astronauta Infantil", img:"https://bit.ly/3fzLz2w", tamanho:"P",ordem:""},
 ]
 
 
