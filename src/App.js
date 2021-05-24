@@ -123,11 +123,11 @@ export default class App extends React.Component {
         products: this.state.products
         .slice()
         .sort((a,b) => 
-          ordem === "Menor" 
+          ordem === "Crescente" 
           ? a.valor > b.valor
             ? 1 
             : -1
-          : ordem === "Maior"
+          : ordem === "Decrescente"
           ? a.valor < b.valor
             ? 1 
             : -1
