@@ -41,8 +41,7 @@ const LogoCart =  styled.img`
 
 const products = [
   
-  { id:1,
-    value:10,nome:"Camiseta",img:"https://bit.ly/2RJHnoR",tamanho:"G",ordem:""},
+  { id:1,value:10,nome:"Camiseta Promoção",img:"https://bit.ly/2RJHnoR",tamanho:"G",ordem:""},
   { id:2, value:70, nome:"Camiseta Starter ", img:"https://bit.ly/3faxB8i", tamanho:"P",ordem:""},
   { id:3, value:80, nome:"Camiseta Especial Recorte", img:"https://bit.ly/3vg2hdW", tamanho:"P",ordem:""},
   { id:4, value:60, nome:"Camiseta Starter Recorte", img:"https://bit.ly/3fH8fOd", tamanho:"P",ordem:""},
