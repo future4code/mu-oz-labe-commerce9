@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="326" height="68" viewBox="0 0 326 68">
+  <g id="Btm" transform="translate(-91 -758)">
+    <rect id="Retângulo_8" data-name="Retângulo 8" width="326" height="68" rx="10" transform="translate(91 758)" fill="#0a2c3d"/>
+    <rect id="Retângulo_9" data-name="Retângulo 9" width="83" height="68" rx="10" transform="translate(91 758)" fill="#51ab4b"/>
+    <path id="Icon_zocial-cart" data-name="Icon zocial-cart" d="M-2.07,6.221a1.5,1.5,0,0,1,.435-1.105A1.5,1.5,0,0,1-.529,4.68H7.342A1.535,1.535,0,0,1,8.3,5a1.488,1.488,0,0,1,.553.854l.8,3.282H32.227l.236-.7A1.385,1.385,0,0,1,33.9,7.36a1.031,1.031,0,0,1,.435.067,1.443,1.443,0,0,1,.8.536,1.463,1.463,0,0,1,.3.9,1.872,1.872,0,0,1-.067.435L31.424,22.465a1.441,1.441,0,0,1-.536.8,1.472,1.472,0,0,1-.9.3H11.261a1.489,1.489,0,0,1-.955-.334,1.564,1.564,0,0,1-.553-.838L6.136,7.728H-.529a1.515,1.515,0,0,1-1.089-.435A1.429,1.429,0,0,1-2.07,6.221Zm12.46,5.962,2.077,8.307H28.845l.066-.3,2.413-8.005H10.39ZM11.8,28.394a2.939,2.939,0,0,1,.921-2.177,3.025,3.025,0,0,1,2.194-.9,3.081,3.081,0,0,1,0,6.162,3.024,3.024,0,0,1-2.194-.9A2.943,2.943,0,0,1,11.8,28.394Zm2.177-13.6h5.56v3.08H14.643Zm8.206,3.081.033-3.08h5.426l-.8,3.08Zm1.239,10.517a2.94,2.94,0,0,1,.922-2.177,3.022,3.022,0,0,1,2.194-.9,3.081,3.081,0,0,1,0,6.162,3.022,3.022,0,0,1-2.194-.9A2.94,2.94,0,0,1,23.419,28.394Z" transform="translate(111.689 789.32)" fill="#0c0b0b" stroke="#000" stroke-width="1"/>
+    <text id="_1" data-name="1" transform="translate(125 789)" font-size="30" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">1</tspan></text>
+    <text id="ADICIONAR_AO_CARRINHO" data-name="ADICIONAR AO CARRINHO" transform="translate(191 799)" fill="#fcfeff" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">ADICIONAR AO CARRINHO</tspan></text>
+  </g>
+</svg>
